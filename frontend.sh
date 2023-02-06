@@ -32,7 +32,7 @@ StatusCheck $?
 #StatusCheck $?
 
  if [ pgrep -x $SERVICE ]; then
-   echo "$SERVICE is running"
+   echo "$SERVICE is running" &>>$LOG_FILE
  else
-   echo "$SERVICE is not running"
+   echo "$SERVICE is not running" &>>$LOG_FILE
  fi
