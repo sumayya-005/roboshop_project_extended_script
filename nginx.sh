@@ -9,8 +9,3 @@ then
 else
     echo "$SERVICE is not installed"
 fi
-
-
-
-
-
