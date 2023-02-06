@@ -1,15 +1,16 @@
 #!/bin/bash
 
-echo "CHECKING INSTALLATION OF NGINX"
-
-sleep 1
+echo "Checking nginx Installation"
 
 SERVICE="nginx"
-if ps -ef | grep "$SERVICE">/dev/null
+if  sudo yum list installed  | grep "$SERVICE">/dev/null
 then
     echo "$SERVICE is installed"
 else
     echo "$SERVICE is not installed"
 fi
+
+
+
 
 
