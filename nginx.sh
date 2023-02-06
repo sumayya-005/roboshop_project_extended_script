@@ -1,14 +1,15 @@
 #!/bin/bash
 
-echo "Checking nginx Installation"
+echo "CHECKING INSTALLATION OF NGINX"
+
+sleep 1
 
 SERVICE="nginx"
 if ps -ef | grep "$SERVICE">/dev/null
 then
     echo "$SERVICE is installed"
 else
-    echo "$SERVICE is not running"
+    echo "$SERVICE is not installed"
 fi
 
 
-echo $?
