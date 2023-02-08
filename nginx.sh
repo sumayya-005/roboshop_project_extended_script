@@ -32,4 +32,13 @@ file="/etc/nginx/default.d/roboshop.conf"
 
 cd $file
 
- 
+ hostname -I
+
+
+
+if [ $? -eq 0 ];then
+   echo "service is running"
+else
+  echo "service is not running"
+fi
+
