@@ -24,3 +24,12 @@ then
 else
         echo "$file not created."
 fi
+
+
+echo "Getting the ip address from the Config File"
+
+file="/etc/nginx/default.d/roboshop.conf"
+
+cd $file
+
+ 
