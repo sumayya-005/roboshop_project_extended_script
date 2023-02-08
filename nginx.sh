@@ -32,7 +32,7 @@ file="/etc/nginx/default.d/roboshop.conf"
 
 cd $file
 
- hostname -I
+hostname -I
 
 
 SERVICE=""
@@ -50,7 +50,7 @@ echo "CHECKING THE SSH CONNECTION"
 # cat /tmp/check_connectivity.sh
 #!/bin/bash
 
-server=10.10.10.10      # server IP
+server=     # server IP
 port=22                 # port
 connect_timeout=5       # Connection timeout
 
