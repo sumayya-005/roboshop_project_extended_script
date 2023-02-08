@@ -35,7 +35,7 @@ cd $file
  hostname -I
 
 
-
+SERVICE=""
 if [ $? -eq 0 ];then
    echo "service is running"
 else
