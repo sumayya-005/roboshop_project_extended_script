@@ -32,8 +32,8 @@ file="/etc/nginx/default.d/roboshop.conf"
 
 cd $file
 
-hostname -I
-
+#hostname -I
+ ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*'
 
 SERVICE=""
 if [ $? -eq 0 ];then
@@ -50,7 +50,7 @@ echo "CHECKING THE SSH CONNECTION"
 # cat /tmp/check_connectivity.sh
 #!/bin/bash
 
-server=     # server IP
+server=    # server IP
 port=22                 # port
 connect_timeout=5       # Connection timeout
 
