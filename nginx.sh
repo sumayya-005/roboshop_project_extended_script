@@ -26,6 +26,9 @@ else
 fi
 
 
+
+#!/etc/nginx/default.d/roboshop.conf
+#!/bin/bash
 echo "Getting the ip address from the Config File"
 
 file="/etc/nginx/default.d/roboshop.conf"
