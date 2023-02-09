@@ -34,11 +34,10 @@ echo "Getting the ip address from the Config File"
 cd /etc/nginx/default.d
 file=$( cat roboshop.conf)
 
-#ifconfig | grep 'inet' | grep -v '127.0.0.1' | cut -d: -f2 | awk ' {print $1}'
 
-for line in $file
+for  in $file
 do
-        echo -e "$line\n"
+        echo -e "ifconfig | grep '/catalogue/ s/localhost/catalogue.roboshop.internal/' | grep -v '' | cut -d: -f2 | awk ' {print $1}'"
 done
 
 
@@ -56,7 +55,7 @@ echo "CHECKING THE SSH CONNECTION"
 # cat /tmp/check_connectivity.sh
 #!/bin/bash
 
-server=    # server IP
+server=     # server IP
 port=22                 # port
 connect_timeout=5       # Connection timeout
 
