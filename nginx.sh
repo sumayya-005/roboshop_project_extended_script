@@ -33,16 +33,15 @@ echo "Getting the ip address from the Config File"
 
 file="/etc/nginx/default.d/roboshop.conf"
 
-cd $file
+cd $file | grep catalogue
 
-#hostname -I
- ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*'
+ ip_addresses=$(hostname -I)
 
-SERVICE=""
+
 if [ $? -eq 0 ];then
-   echo "service is running"
+   echo " is running"
 else
-  echo "service is not running"
+  echo "is not running"
 fi
 
 
