@@ -27,15 +27,19 @@ fi
 
 
 
-#!/etc/nginx/default.d/roboshop.conf
+# cat /etc/nginx/default.d/roboshop.conf
 #!/bin/bash
 echo "Getting the ip address from the Config File"
 
-file="/etc/nginx/default.d/roboshop.conf"
+cd /etc/nginx/default.d
+file=$( cat roboshop.conf)
 
-cd $file | grep catalogue
+#ifconfig | grep 'inet' | grep -v '127.0.0.1' | cut -d: -f2 | awk ' {print $1}'
 
- ip_addresses=$(hostname -I)
+for line in $file
+do
+        echo -e "$line\n"
+done
 
 
 if [ $? -eq 0 ];then
