@@ -35,10 +35,10 @@ cd /etc/nginx/default.d
 file=$( cat roboshop.conf)
 
 
+
 for  in $file
 do
         echo -e "ifconfig | grep '/catalogue/ s/localhost/catalogue.roboshop.internal/' | grep -v '' | cut -d: -f2 | awk ' {print $1}'"
-done
 
 
 if [ $? -eq 0 ];then
