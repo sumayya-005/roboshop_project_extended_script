@@ -33,7 +33,7 @@ echo "Getting the ip address from the Config File"
 
 cd /etc/nginx/default.d
 
-grep catalogue.roboshop.internal:8080 roboshop.conf | awk '/roboshop.internal/' roboshop.conf
+grep 'catalogue.roboshop.internal:8080' roboshop.conf | awk '/roboshop.internal/' roboshop.conf
 
 
 if [ $? -eq 0 ];then
@@ -42,21 +42,3 @@ else
   echo "is not running"
 fi
 
-
-
-
-echo "CHECKING THE SSH CONNECTION"
-
-# cat /tmp/check_connectivity.sh
-#!/bin/bash
-
-server=     # server IP
-port=22                 # port
-connect_timeout=5       # Connection timeout
-
-timeout $connect_timeout bash -c "</dev/tcp/$server/$port"
-if [ $? == 0 ];then
-   echo "SSH Connection to $server over port $port is possible"
-else
-   echo "SSH connection to $server over port $port is not possible"
-fi
