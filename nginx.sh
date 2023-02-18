@@ -26,8 +26,6 @@ else
 fi
 
 
-
-# cat /etc/nginx/default.d/roboshop.conf
 #!/bin/bash
 echo "Getting the ip address from the Config File"
 
@@ -37,8 +35,8 @@ grep 'catalogue.roboshop.internal:8080' roboshop.conf | awk '/roboshop.internal/
 
 
 if [ $? -eq 0 ];then
-   echo " is running"
+   echo " Service  is running"
 else
-  echo "is not running"
+  echo " Service is not running"
 fi
 
