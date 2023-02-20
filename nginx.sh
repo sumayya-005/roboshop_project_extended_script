@@ -31,9 +31,11 @@ echo "Getting the ip address from the Config File"
 
 cd /etc/nginx/default.d
 
+
+
 grep 'catalogue.roboshop.internal:8080' roboshop.conf | awk '/roboshop.internal/' roboshop.conf
 
-ifconfig 
+ifconfig
 RET=$?
 echo ${RET}
 if [ ${RET} -eq 0 ]; then
