@@ -32,11 +32,5 @@ cd /etc/nginx/default.d
 
 cat roboshop.conf | grep 'location /api/catalogue/ { proxy_pass http://localhost:8080/; }' roboshop.conf
 
-file="awk 'http://localhost:8080' roboshop.conf"
-ifconfig
-
-echo ${file}
-if [ ${file} -eq 0 ]; then
-  echo yay
-fi
+ ifconfig awk 'http://localhost:8080' roboshop.conf
 
