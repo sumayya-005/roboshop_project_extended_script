@@ -30,7 +30,7 @@ fi
 echo "Getting the ip address from the Config File"
 cd /etc/nginx/default.d
 
-cat roboshop.conf | grep 'location /api/catalogue/ { proxy_pass http://localhost:8080/; }' roboshop.conf
+awk -F, '{print$1}' roboshop.conf | grep 'http://localhost:8080/' roboshop.conf
 
- ifconfig awk 'http://localhost:8080' roboshop.conf
+
 
