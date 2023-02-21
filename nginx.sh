@@ -28,17 +28,15 @@ fi
 
 #!/bin/bash
 echo "Getting the ip address from the Config File"
-
 cd /etc/nginx/default.d
 
+cat roboshop.conf | grep 'location /api/catalogue/ { proxy_pass http://localhost:8080/; }' roboshop.conf
 
-
-grep 'catalogue.roboshop.internal:8080' roboshop.conf | awk '/roboshop.internal/' roboshop.conf
-
+file="awk 'http://localhost:8080' roboshop.conf"
 ifconfig
-RET=$?
-echo ${RET}
-if [ ${RET} -eq 0 ]; then
+
+echo ${file}
+if [ ${file} -eq 0 ]; then
   echo yay
 fi
 
