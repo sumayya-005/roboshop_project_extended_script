@@ -30,7 +30,8 @@ fi
 echo "Getting the ip address from the Config File"
 cd /etc/nginx/default.d
 
-awk -F, '{print$1}' roboshop.conf | grep 'http://localhost:8080/' roboshop.conf
+awk -F, '{print$1}' roboshop.conf | grep 'http://localhost:8080/' roboshop.conf >dev/
 
+ifconfig http://localhost:8080/
 
 
