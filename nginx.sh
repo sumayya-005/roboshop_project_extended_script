@@ -28,10 +28,21 @@ fi
 
 #!/bin/bash
 echo "Getting the ip address from the Config File"
+
+
 cd /etc/nginx/default.d
 
-awk -F, '{print$1}' roboshop.conf | grep 'http://localhost:8080/' roboshop.conf >dev/
-
-ifconfig http://localhost:8080/
+cat roboshop.conf | grep 'http://localhost:8080/' roboshop.conf
 
 
+echo "Checking the connection"
+
+Service=" http://localhost:8080/"
+
+ifconfig $Service
+if [ $? -eq 0 ]; then
+    echo "$SERVICE is running"
+else
+    echo "$SERVICE is not running"
+    exit 1
+fi
